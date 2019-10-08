@@ -210,12 +210,12 @@ int main() {
 	}
 	EntropSumNoBigrTwo = EntropSumNoBigrTwo / 2;
 	double RedundMon, RedundMonNo, RedundBigrOne, RedundBigrTwo, RedundBigrNoOne, RedundBigrNoTwo;
-	RedundMon = 1 - (EntropSum / SumNumLet) / log2(34);
-	RedundMonNo = 1 - (EntropSumNo / SumNumLetNo) / log2(33);
-	RedundBigrOne = 1 - (EntropSumBigr / SumNumLetBigr) / log2(34);
-	RedundBigrNoOne = 1 - (EntropSumNoBigr / SumNumLetNoBigr) / log2(33);
-	RedundBigrTwo = 1 - (EntropSumBigrTwo / SumNumLetBigrTwo) / log2(34);
-	RedundBigrNoTwo = 1 - (EntropSumNoBigrTwo / SumNumLetNoBigrTwo) / log2(33);
+	RedundMon = 1 - (EntropSum) / log2(34);
+	RedundMonNo = 1 - (EntropSumNo ) / log2(33);
+	RedundBigrOne = 1 - (EntropSumBigr) / log2(34);
+	RedundBigrNoOne = 1 - (EntropSumNoBigr ) / log2(33);
+	RedundBigrTwo = 1 - (EntropSumBigrTwo) / log2(34);
+	RedundBigrNoTwo = 1 - (EntropSumNoBigrTwo ) / log2(33);
 	cout << "Ёнтропи€ монограмм на тексте с пробелами: " << EntropSum << " »збыточность: " << RedundMon << endl;
 	cout << "Ёнтропи€ монограмм на тексте без пробелов: " << EntropSumNo << " »збыточность: " << RedundMonNo << endl;
 	cout << "Ёнтропи€ биграмм с шагом один: " << EntropSumBigr << " »збыточность: " << RedundBigrOne << endl;
@@ -231,12 +231,12 @@ int main() {
 	string seq1="", seq2="", resu, freqbigr, freqbigrno, freqtwobigr, freqtwobigrno;
 	for (int i = 0; i < 34; i++) {
 		seq1 += shablon[i];
-		seq1+=' ' +to_string(NumLet[i]) + '\n';
+		seq1+=' ' +to_string(FrequLet[i]) + '\n';
 	}
 	seq1 += '\n';
 	for (int i = 0; i < 33; i++) {
 		seq2 += shablonno[i] ;
-		seq2+=' ' +to_string(NumLetNo[i]) + '\n';
+		seq2+=' ' +to_string(FrequLetNo[i]) + '\n';
 	}
 	seq2 += '\n';
 
@@ -270,7 +270,7 @@ int main() {
 		for (int j = 0; j < 34;j++) {
 			freqbigr += shablon[i];
 			freqbigr += shablon[j];
-			freqbigr += ' ' + to_string(NumLetBigr[i][j]) + '\n';
+			freqbigr += ' ' + to_string(FrequLetBigr[i][j]) + '\n';
 		}
 	}
 	freqbigr += '\n';
@@ -279,7 +279,7 @@ int main() {
 		for (int j = 0; j < 33; j++) {
 			freqbigrno += shablonno[i];
 			freqbigrno += shablonno[j];
-			freqbigrno += ' ' + to_string(NumLetNoBigr[i][j]) + '\n';
+			freqbigrno += ' ' + to_string(FrequLetNoBigr[i][j]) + '\n';
 		}
 	}
 	freqbigrno += '\n';
@@ -288,7 +288,7 @@ int main() {
 		for (int j = 0; j < 34; j++) {
 			freqtwobigr += shablon[i];
 			freqtwobigr += shablon[j];
-			freqtwobigr += ' ' + to_string(NumLetBigrTwo[i][j]) + '\n';
+			freqtwobigr += ' ' + to_string(FrequLetBigrTwo[i][j]) + '\n';
 		}
 	}
 	freqtwobigr += '\n';
@@ -297,7 +297,7 @@ int main() {
 		for (int j = 0; j < 33; j++) {
 			freqtwobigrno += shablonno[i];
 			freqtwobigrno += shablonno[j];
-			freqtwobigrno += ' ' + to_string(NumLetNoBigrTwo[i][j]) + '\n';
+			freqtwobigrno += ' ' + to_string(FrequLetNoBigrTwo[i][j]) + '\n';
 		}
 	}
 	freqtwobigrno += '\n';
